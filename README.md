@@ -7,7 +7,7 @@ To help familiarize you with these tests and allow you to use the skills covered
 
 This week’s coursework will equip you with all the skills you need to succeed in this assignment.
 
-User Story
+# User Story
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
@@ -24,26 +24,16 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 
+I want to fufil all the critera mentioned above in a way that challenges me and pushes me to learn new things, with this in mind, the code i will use this time will be different to my previous projects, employing new syntax and requiring new research on my part.
+
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+https://github.com/SamMarch/04-Web-APIs-Code-Quiz.git
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+https://sammarch.github.io/04-Web-APIs-Code-Quiz/
 
-
-    ![](assets\images\2022-07-07.png)
-
+    ![homePageScreenshot](/assets/images/2022-07-07.png)
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-
-## Features
-
-If your project has a lot of features, list them here.
-
+A special thank you goes out to classmate Brad for helping me intergrate the timer and cleaning up my code.
