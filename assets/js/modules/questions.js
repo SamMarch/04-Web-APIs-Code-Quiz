@@ -31,5 +31,44 @@ export const questions = [
         choice4: '<h1> to <h6>',
         answer: 3,
     },
-    // Add more questions as needed
+    {
+        question: 'What is the correct syntax for referring to an external script called "script.js"?',
+        choice1: '<script href="script.js">',
+        choice2: '<script name="script.js">',
+        choice3: '<script src="script.js">',
+        choice4: '<script file="script.js">',
+        answer: 3,
+    },
+    {
+        question: 'How do you write "Hello World" in an alert box?',
+        choice1: 'msgBox("Hello World");',
+        choice2: 'alertBox("Hello World");',
+        choice3: 'msg("Hello World");',
+        choice4: 'alert("Hello World");',
+        answer: 4,
+    },
+    {
+        question: 'How do you create a function in JavaScript?',
+        choice1: 'function:myFunction()',
+        choice2: 'function = myFunction()',
+        choice3: 'function myFunction()',
+        choice4: 'myFunction():function',
+        answer: 3,
+    },
+    {
+        question: 'How to write an IF statement in JavaScript?',
+        choice1: 'if i = 5 then',
+        choice2: 'if i == 5 then',
+        choice3: 'if (i == 5)',
+        choice4: 'if i = 5',
+        answer: 3,
+    },
+    {
+        question: 'How does a FOR loop start?',
+        choice1: 'for (i = 0; i <= 5; i++)',
+        choice2: 'for i = 1 to 5',
+        choice3: 'for (i = 0; i <= 5)',
+        choice4: 'for (i <= 5; i++)',
+        answer: 1,
+    }
 ];
