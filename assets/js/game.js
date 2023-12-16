@@ -1,4 +1,5 @@
 import { questions } from './modules/questions.js';
+import { startTimer, minusTime } from './modules/timer.js';
 
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
@@ -6,31 +7,28 @@ const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 const timerText = document.querySelector('#timer');
-const GAME_TIME = 60;
-const PENALTY = 10;
 
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-let timeRemaining = 60;
 
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = questions.length;
+
+const endGame = () => {
+    localStorage.setItem('mostRecentScore', score);
+    return window.location.assign('end.html');
+}
 
 const startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
     getNewQuestions();
-    startTimer();
+    startTimer(timerText, endGame);
 };
-
-const endGame = () => {
-    localStorage.setItem('mostRecentScore', score);
-    return window.location.assign('end.html');
-}
 
 const getNewQuestions = () => {
 
@@ -56,11 +54,6 @@ const getNewQuestions = () => {
     acceptingAnswers = true;
 };
 
-const minusTime = () => {
-    timeRemaining -= PENALTY;
-    renderTime();
-}
-
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
@@ -75,7 +68,7 @@ choices.forEach(choice => {
         if(correctAnswer) {
             incrementScore(SCORE_POINTS)
         } else {
-            minusTime();
+            minusTime(timerText);
         }
 
         selectedChoice.parentElement.classList.add(classToApply)
@@ -93,23 +86,6 @@ const incrementScore = num => {
     score += num
     scoreText.innerText = score
     console.log(score)
-}
-
-const renderTime = () => {
-    timerText.innerText = timeRemaining;
-}
-
-const startTimer = () => {
-    timeRemaining = GAME_TIME;
-    renderTime()
-    setInterval(() => {
-        console.log(timeRemaining)
-        timeRemaining--
-        renderTime()
-        if (timeRemaining <= 0) {
-            endGame();
-        }
-    }, 1000)
 }
 
 startGame()
